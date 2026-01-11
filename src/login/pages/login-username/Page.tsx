@@ -49,10 +49,10 @@ export function Page() {
             }
             infoNode={
                 <div id="kc-registration" className="text-center text-sm">
-                    <span>
+                    <span className="text-gray-700 dark:text-gray-300">
                         {msg("noAccount")}{" "}
                         <a
-                            className="text-primary dark:text-primary-foreground underline underline-offset-4 "
+                            className="text-[#5e17eb] hover:text-[#4a12bc] font-medium"
                             tabIndex={8}
                             href={url.registrationUrl}
                         >
@@ -61,7 +61,13 @@ export function Page() {
                     </span>
                 </div>
             }
-            headerNode={msg("doLogIn")}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("doLogIn")}
+                    </p>
+                </div>
+            }
             socialProvidersNode={
                 <>
                     {realm.password &&
@@ -177,7 +183,7 @@ export function Page() {
 
                         <Button
                             disabled={isLoginButtonDisabled}
-                            className="w-full"
+                            className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                             name="login"
                             type="submit"
                             tabIndex={4}

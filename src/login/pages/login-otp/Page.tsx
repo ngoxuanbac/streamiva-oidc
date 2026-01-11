@@ -23,7 +23,13 @@ export function Page() {
     return (
         <Template
             displayMessage={!kcContext.messagesPerField.existsError("totp")}
-            headerNode={msg("doLogIn")}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("doLogIn")}
+                    </p>
+                </div>
+            }
         >
             <form
                 id="kc-otp-login-form"
@@ -103,7 +109,7 @@ export function Page() {
                 </div>
 
                 <Button
-                    className="w-full"
+                    className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                     name="login"
                     id="kc-login"
                     type="submit"

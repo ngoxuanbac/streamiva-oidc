@@ -13,12 +13,15 @@ export function Page() {
     return (
         <Template
             headerNode={
-                kcContext.messageHeader !== undefined
-                    ? advancedMsg(kcContext.messageHeader)
-                    : msg("registerTitle")
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {kcContext.messageHeader !== undefined
+                            ? advancedMsg(kcContext.messageHeader)
+                            : msg("registerTitle")}
+                    </p>
+                </div>
             }
             displayMessage={kcContext.messagesPerField.exists("global")}
-            displayRequiredFields
         >
             <Form />
         </Template>

@@ -29,7 +29,15 @@ export function Page() {
     }, [htmlFormElement]);
 
     return (
-        <Template headerNode={msg("saml.post-form.title")}>
+        <Template
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("saml.post-form.title")}
+                    </p>
+                </div>
+            }
+        >
             <p>{msg("saml.post-form.message")}</p>
             <form
                 name="saml-post-binding"

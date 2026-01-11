@@ -12,7 +12,15 @@ export function Page() {
 
     const { msg, msgStr } = useI18n();
     return (
-        <Template headerNode={msg("logoutConfirmTitle")}>
+        <Template
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("logoutConfirmTitle")}
+                    </p>
+                </div>
+            }
+        >
             <div className="space-y-4">
                 <p className="text-foreground ">{msg("logoutConfirmHeader")}</p>
 
@@ -25,7 +33,7 @@ export function Page() {
 
                     <Button
                         tabIndex={4}
-                        className="w-full"
+                        className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                         name="confirmLogout"
                         id="kc-logout"
                         type="submit"
@@ -38,7 +46,7 @@ export function Page() {
                     <div className="flex justify-end">
                         <a
                             href={client.baseUrl}
-                            className="text-sm text-primary dark:text-white hover:text-primary/80 underline underline-offset-4"
+                            className="text-sm text-[#5e17eb] hover:text-[#4a12bc] font-medium"
                         >
                             {msg("backToApplication")}
                         </a>

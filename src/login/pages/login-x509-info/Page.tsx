@@ -14,7 +14,15 @@ export function Page() {
     const { msg, msgStr } = useI18n();
 
     return (
-        <Template headerNode={msg("doLogIn")}>
+        <Template
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("doLogIn")}
+                    </p>
+                </div>
+            }
+        >
             <form
                 id="kc-x509-login-info"
                 className="space-y-6"
@@ -61,7 +69,7 @@ export function Page() {
                         name="login"
                         id="kc-login"
                         type="submit"
-                        className="sm:flex-1"
+                        className="sm:flex-1 bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                     >
                         {msgStr("doContinue")}
                     </Button>

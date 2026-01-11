@@ -12,7 +12,13 @@ export function Page() {
 
     return (
         <Template
-            headerNode={msg("linkIdpActionTitle", kcContext.idpDisplayName)}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("linkIdpActionTitle", kcContext.idpDisplayName)}
+                    </p>
+                </div>
+            }
             displayMessage={false}
         >
             <div id="kc-link-text">
@@ -33,7 +39,7 @@ export function Page() {
                         name="continue"
                         id="kc-continue"
                         type="submit"
-                        className="flex-1"
+                        className="flex-1 bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                     >
                         {msgStr("doContinue")}
                     </Button>

@@ -1,5 +1,4 @@
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Button } from "@/components/ui/button";
 import { useI18n } from "@/login/i18n";
 import { useKcContext } from "@/login/KcContext";
 import { useEffect, useState } from "react";
@@ -29,7 +28,13 @@ export function Page() {
     return (
         <Template
             documentTitle={msgStr("frontchannel-logout.title")}
-            headerNode={msg("frontchannel-logout.title")}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("frontchannel-logout.title")}
+                    </p>
+                </div>
+            }
         >
             <Alert variant="info" className="my-6">
                 <AlertDescription>
@@ -64,17 +69,15 @@ export function Page() {
             )}
 
             {kcContext.logout.logoutRedirectUri && (
-                <div className="mt-6 flex justify-center">
-                    <Button asChild size="lg">
-                        <a
-                            id="continue"
-                            href={kcContext.logout.logoutRedirectUri}
-                            className="flex items-center gap-2"
-                        >
-                            {msg("doContinue")}
-                            <FiExternalLink className="h-4 w-4" />
-                        </a>
-                    </Button>
+                <div className="flex justify-end">
+                    <a
+                        id="continue"
+                        href={kcContext.logout.logoutRedirectUri}
+                        className="text-sm text-[#5e17eb] hover:text-[#4a12bc] font-medium flex items-center gap-2"
+                    >
+                        {msg("doContinue")}
+                        <FiExternalLink className="h-4 w-4" />
+                    </a>
                 </div>
             )}
         </Template>

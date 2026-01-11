@@ -12,11 +12,11 @@ export function Info() {
 
     return (
         <div id="kc-registration-container">
-            <div id="kc-registration">
-                <span className="space-x-2">
+            <div id="kc-registration" className="text-gray-700 dark:text-gray-300">
+                <span className="space-x-1">
                     {msg("noAccount")}
                     <a
-                        className=" underline underline-offset-4 "
+                        className="text-[#5e17eb] hover:text-[#4a12bc] font-medium"
                         tabIndex={8}
                         href={url.registrationUrl}
                     >

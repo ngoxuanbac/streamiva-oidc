@@ -15,11 +15,19 @@ export function Page() {
             displayInfo
             displayMessage={!kcContext.messagesPerField.existsError("username")}
             infoNode={
-                kcContext.realm.duplicateEmailsAllowed
-                    ? msg("emailInstructionUsername")
-                    : msg("emailInstruction")
+                <span className="text-sm text-gray-600 dark:text-gray-400">
+                    {kcContext.realm.duplicateEmailsAllowed
+                        ? msg("emailInstructionUsername")
+                        : msg("emailInstruction")}
+                </span>
             }
-            headerNode={msg("emailForgotTitle")}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("emailForgotTitle")}
+                    </p>
+                </div>
+            }
         >
             <Form />
         </Template>

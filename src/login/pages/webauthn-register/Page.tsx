@@ -19,8 +19,10 @@ export function Page() {
     return (
         <Template
             headerNode={
-                <div className="flex items-center justify-center gap-2">
-                    <span>{msg("webauthn-registration-title")}</span>
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("webauthn-registration-title")}
+                    </p>
                 </div>
             }
         >
@@ -49,7 +51,11 @@ export function Page() {
                 <LogoutOtherSessions />
 
                 <div className="space-y-3">
-                    <Button type="button" className="w-full" id={webAuthnButtonId}>
+                    <Button
+                        type="button"
+                        className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
+                        id={webAuthnButtonId}
+                    >
                         {msgStr("doRegisterSecurityKey")}
                     </Button>
 

@@ -22,7 +22,13 @@ export function Page() {
     return (
         <Template
             displayMessage={!messagesPerField.existsError("totp")}
-            headerNode={msg("doLogIn")}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("doLogIn")}
+                    </p>
+                </div>
+            }
         >
             <form
                 id="kc-otp-reset-form"
@@ -71,7 +77,7 @@ export function Page() {
                         >
                             <Button
                                 id="kc-otp-reset-form-submit"
-                                className={"w-full"}
+                                className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                                 type="submit"
                             >
                                 {msgStr("doSubmit")}

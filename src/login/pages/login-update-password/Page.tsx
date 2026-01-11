@@ -20,7 +20,13 @@ export function Page() {
     return (
         <Template
             displayMessage={!messagesPerField.existsError("password", "password-confirm")}
-            headerNode={msg("updatePasswordTitle")}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("updatePasswordTitle")}
+                    </p>
+                </div>
+            }
         >
             <form
                 id="kc-passwd-update-form"
@@ -88,7 +94,10 @@ export function Page() {
                 <LogoutOtherSessions />
 
                 <div className="space-y-3">
-                    <Button className="w-full" type="submit">
+                    <Button
+                        className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
+                        type="submit"
+                    >
                         {msgStr("doSubmit")}
                     </Button>
                     {isAppInitiatedAction && (

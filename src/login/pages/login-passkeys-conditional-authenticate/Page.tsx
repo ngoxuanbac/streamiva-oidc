@@ -32,14 +32,24 @@ export function Page() {
 
     return (
         <Template
-            headerNode={msg("passkey-login-title")}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("passkey-login-title")}
+                    </p>
+                </div>
+            }
             infoNode={
                 realm.registrationAllowed &&
                 !registrationDisabled && (
                     <div id="kc-registration">
                         <span>
                             ${msg("noAccount")}{" "}
-                            <a tabIndex={6} href={url.registrationUrl}>
+                            <a
+                                tabIndex={6}
+                                href={url.registrationUrl}
+                                className="text-[#5e17eb] hover:text-[#4a12bc] font-medium"
+                            >
                                 {msg("doRegister")}
                             </a>
                         </span>

@@ -11,7 +11,15 @@ export function Page() {
     const { msg } = useI18n();
 
     return (
-        <Template headerNode={msg("confirmOverrideIdpTitle")}>
+        <Template
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("confirmOverrideIdpTitle")}
+                    </p>
+                </div>
+            }
+        >
             <form
                 id="kc-register-form"
                 action={kcContext.url.loginAction}
@@ -21,7 +29,7 @@ export function Page() {
                 <span>
                     {msg("pageExpiredMsg1")}{" "}
                     <a
-                        className="text-primary dark:text-white underline underline-offset-2"
+                        className="text-[#5e17eb] hover:text-[#4a12bc] underline underline-offset-2"
                         id="loginRestartLink"
                         href={kcContext.url.loginRestartFlowUrl}
                     >
@@ -31,7 +39,7 @@ export function Page() {
 
                 <Button
                     type="submit"
-                    className="w-full"
+                    className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                     name="submitAction"
                     id="confirmOverride"
                     value="confirmOverride"

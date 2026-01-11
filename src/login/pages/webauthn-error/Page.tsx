@@ -13,7 +13,16 @@ export function Page() {
     const { msg, msgStr } = useI18n();
 
     return (
-        <Template displayMessage headerNode={msg("webauthn-error-title")}>
+        <Template
+            displayMessage
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("webauthn-error-title")}
+                    </p>
+                </div>
+            }
+        >
             <div className="space-y-4">
                 <form
                     id="kc-error-credential-form"
@@ -39,7 +48,7 @@ export function Page() {
                         document.getElementById("kc-error-credential-form").submit();
                     }}
                     type="button"
-                    className="w-full"
+                    className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                     name="try-again"
                     id="kc-try-again"
                 >

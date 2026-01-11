@@ -14,7 +14,13 @@ export function Page() {
     return (
         <Template
             displayMessage={false}
-            headerNode={msg("deleteCredentialTitle", kcContext.credentialLabel)}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("deleteCredentialTitle", kcContext.credentialLabel)}
+                    </p>
+                </div>
+            }
         >
             <Alert variant="warning" className=" my-3">
                 <AlertDescription>

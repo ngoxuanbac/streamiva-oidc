@@ -34,9 +34,13 @@ export function Page() {
     return (
         <Template
             headerNode={
-                kcContext.code.success
-                    ? msg("codeSuccessTitle")
-                    : msg("codeErrorTitle", kcContext.code.error)
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {kcContext.code.success
+                            ? msg("codeSuccessTitle")
+                            : msg("codeErrorTitle", kcContext.code.error)}
+                    </p>
+                </div>
             }
         >
             <div id="kc-code">

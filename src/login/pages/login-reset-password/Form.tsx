@@ -51,16 +51,21 @@ export function Form() {
                 )}
             </Field>
 
-            <Button className="w-full" type="submit">
+            <Button
+                className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
+                type="submit"
+            >
                 {msgStr("doSubmit")}
             </Button>
 
-            <div className="flex justify-end">
-                <Button variant="link" type="button">
-                    <a id="backToApplication" href={kcContext.url.loginUrl}>
-                        {msg("backToApplication")}
-                    </a>
-                </Button>
+            <div className="flex justify-end mt-4">
+                <a
+                    id="backToApplication"
+                    href={kcContext.url.loginUrl}
+                    className="text-sm text-[#5e17eb] hover:text-[#4a12bc] font-medium"
+                >
+                    {msg("backToApplication")}
+                </a>
             </div>
         </form>
     );

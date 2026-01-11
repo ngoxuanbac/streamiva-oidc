@@ -13,13 +13,19 @@ export function Page() {
     return (
         <Template
             displayInfo
-            headerNode={msg("emailVerifyTitle")}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("emailVerifyTitle")}
+                    </p>
+                </div>
+            }
             infoNode={
-                <p className="instruction">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                     {msg("emailVerifyInstruction2")}
                     <br />
                     <a
-                        className="text-primary dark:text-white underline"
+                        className="text-[#5e17eb] hover:text-[#4a12bc] font-medium"
                         href={url.loginAction}
                     >
                         {msg("doClickHere")}
@@ -29,7 +35,7 @@ export function Page() {
                 </p>
             }
         >
-            <p className="instruction">
+            <p className="text-sm text-gray-700 dark:text-gray-300">
                 {msg("emailVerifyInstruction1", user?.email ?? "")}
             </p>
         </Template>

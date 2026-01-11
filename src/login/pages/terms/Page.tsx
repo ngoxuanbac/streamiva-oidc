@@ -13,7 +13,16 @@ export function Page() {
     const { url } = kcContext;
 
     return (
-        <Template displayMessage={false} headerNode={msg("termsTitle")}>
+        <Template
+            displayMessage={false}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("termsTitle")}
+                    </p>
+                </div>
+            }
+        >
             <div className="space-y-6">
                 <div
                     id="kc-terms-text"
@@ -37,7 +46,7 @@ export function Page() {
                             name="accept"
                             id="kc-accept"
                             type="submit"
-                            className="sm:flex-1"
+                            className="sm:flex-1 bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                         >
                             {msgStr("doAccept")}
                         </Button>

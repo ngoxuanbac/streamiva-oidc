@@ -11,7 +11,15 @@ export function Page() {
     const { msg } = useI18n();
 
     return (
-        <Template headerNode={msg("emailLinkIdpTitle", kcContext.idpAlias)}>
+        <Template
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("emailLinkIdpTitle", kcContext.idpAlias)}
+                    </p>
+                </div>
+            }
+        >
             <Alert id="instruction1" variant="info" className="my-3">
                 <AlertDescription>
                     {msg(
@@ -28,7 +36,7 @@ export function Page() {
                     {msg("emailLinkIdp2")}{" "}
                     <a
                         href={kcContext.url.loginAction}
-                        className="inline-flex items-center gap-1 text-primary dark:text-white underline underline-offset-2"
+                        className="inline-flex items-center gap-1 text-[#5e17eb] hover:text-[#4a12bc] underline underline-offset-2"
                     >
                         {msg("doClickHere")}
                     </a>{" "}
@@ -39,7 +47,7 @@ export function Page() {
                     {msg("emailLinkIdp4")}{" "}
                     <a
                         href={kcContext.url.loginAction}
-                        className="inline-flex items-center gap-1 text-primary dark:text-white underline underline-offset-2"
+                        className="inline-flex items-center gap-1 text-[#5e17eb] hover:text-[#4a12bc] underline underline-offset-2"
                     >
                         {msg("doClickHere")}
                     </a>{" "}

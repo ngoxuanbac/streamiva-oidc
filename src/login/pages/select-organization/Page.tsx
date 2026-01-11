@@ -64,7 +64,15 @@ export function Page() {
     const useSelect = organizations.length > 3;
 
     return (
-        <Template headerNode={msg("organization.selectTitle")}>
+        <Template
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("organization.selectTitle")}
+                    </p>
+                </div>
+            }
+        >
             <form ref={formRef} action={kcContext.url.loginAction} method="post">
                 <div id="kc-user-organizations" className="space-y-2">
                     <h2 className="text-md font-semibold">

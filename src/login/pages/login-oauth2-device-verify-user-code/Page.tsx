@@ -16,7 +16,15 @@ export function Page() {
     const { kcClsx } = useKcClsx();
 
     return (
-        <Template headerNode={msg("oauth2DeviceVerificationTitle")}>
+        <Template
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("oauth2DeviceVerificationTitle")}
+                    </p>
+                </div>
+            }
+        >
             <form
                 id="kc-user-verify-device-user-code-form"
                 className="space-y-5"
@@ -44,7 +52,10 @@ export function Page() {
 
                     <div id="kc-form-buttons" className={kcClsx("kcFormButtonsClass")}>
                         <div className={kcClsx("kcFormButtonsWrapperClass")}>
-                            <Button className="w-full" type="submit">
+                            <Button
+                                className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
+                                type="submit"
+                            >
                                 {msgStr("doSubmit")}
                             </Button>
                         </div>

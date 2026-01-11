@@ -20,8 +20,13 @@ export function Page() {
     return (
         <Template
             displayMessage={messagesPerField.exists("global")}
-            displayRequiredFields
-            headerNode={msg("updateEmailTitle")}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("updateEmailTitle")}
+                    </p>
+                </div>
+            }
         >
             <form
                 id="kc-update-email-form"
@@ -38,7 +43,7 @@ export function Page() {
                 <div className="space-y-3">
                     <Button
                         disabled={!isFormSubmittable}
-                        className="w-full"
+                        className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                         type="submit"
                     >
                         {msgStr("doSubmit")}

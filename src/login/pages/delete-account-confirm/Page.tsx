@@ -12,7 +12,15 @@ export function Page() {
     const { msg, msgStr } = useI18n();
 
     return (
-        <Template headerNode={msg("deleteAccountConfirm")}>
+        <Template
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("deleteAccountConfirm")}
+                    </p>
+                </div>
+            }
+        >
             <form action={kcContext.url.loginAction} className="space-y-6" method="post">
                 <Alert variant="warning" className="my-3">
                     <AlertDescription>

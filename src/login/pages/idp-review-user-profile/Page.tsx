@@ -17,8 +17,13 @@ export function Page() {
     return (
         <Template
             displayMessage={kcContext.messagesPerField.exists("global")}
-            displayRequiredFields
-            headerNode={msg("loginIdpReviewProfileTitle")}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("loginIdpReviewProfileTitle")}
+                    </p>
+                </div>
+            }
         >
             <form
                 id="kc-idp-review-profile-form"
@@ -35,7 +40,7 @@ export function Page() {
                     </div>
                     <div id="kc-form-buttons">
                         <Button
-                            className="w-full"
+                            className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                             disabled={!isFomSubmittable}
                             type="submit"
                         >

@@ -29,7 +29,13 @@ export function Page() {
 
     return (
         <Template
-            headerNode={msg("doLogIn")}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("doLogIn")}
+                    </p>
+                </div>
+            }
             displayMessage={!kcContext.messagesPerField.existsError("password")}
         >
             <form
@@ -88,7 +94,7 @@ export function Page() {
                 <div className="flex justify-end ">
                     <Button
                         disabled={isLoginButtonDisabled}
-                        className="w-full"
+                        className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                         name="login"
                         type="submit"
                         tabIndex={4}

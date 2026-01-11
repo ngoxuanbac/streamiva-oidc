@@ -1,10 +1,10 @@
 import { assert } from "tsafe/assert";
 import { Template } from "../../components/Template";
-import { useI18n } from "../../i18n";
 import { useKcContext } from "../../KcContext";
 import { Form } from "./Form";
 import { Info } from "./Info";
 import { SocialProviders } from "./SocialProviders";
+import { useI18n } from "@/login/i18n";
 
 export function Page() {
     const { kcContext } = useKcContext();
@@ -18,12 +18,10 @@ export function Page() {
                 !kcContext.messagesPerField.existsError("username", "password")
             }
             headerNode={
-                <div className="text-start">
-                    <p className="text-2xl font-bold">{msg("loginAccountTitle")}</p>
-                    <p className="text-balance font-normal text-sm text-muted-foreground">
-                        {msg("enterCredentials")}
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("loginAccountTitle")}
                     </p>
-                    <hr className="mt-3" />
                 </div>
             }
             displayInfo={

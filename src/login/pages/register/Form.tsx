@@ -61,8 +61,8 @@ export function Form() {
                 )}
             <div className={kcClsx("kcFormGroupClass")}>
                 {kcContext.recaptchaRequired &&
-                    !kcContext.recaptchaVisible &&
-                    kcContext.recaptchaAction !== undefined ? (
+                !kcContext.recaptchaVisible &&
+                kcContext.recaptchaAction !== undefined ? (
                     <div id="kc-form-buttons" className={kcClsx("kcFormButtonsClass")}>
                         <button
                             className={clsx(
@@ -88,7 +88,7 @@ export function Form() {
                             !isFormSubmittable ||
                             (kcContext.termsAcceptanceRequired && !areTermsAccepted)
                         }
-                        className="w-full mt-2"
+                        className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                         name="register"
                         type="submit"
                     >
@@ -97,10 +97,13 @@ export function Form() {
                 )}
             </div>
 
-            <div className=" flex justify-end">
-                <Button type="button" variant="ghost">
-                    <a href={kcContext.url.loginUrl}>{msg("backToLogin")}</a>
-                </Button>
+            <div className="flex justify-end mt-4">
+                <a
+                    href={kcContext.url.loginUrl}
+                    className="text-sm text-[#5e17eb] hover:text-[#4a12bc] font-medium"
+                >
+                    {msg("backToLogin")}
+                </a>
             </div>
         </form>
     );

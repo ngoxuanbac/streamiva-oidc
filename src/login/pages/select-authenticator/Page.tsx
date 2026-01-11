@@ -58,7 +58,16 @@ export function Page() {
 
     const { msg, advancedMsg } = useI18n();
     return (
-        <Template displayInfo={false} headerNode={msg("loginChooseAuthenticator")}>
+        <Template
+            displayInfo={false}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("loginChooseAuthenticator")}
+                    </p>
+                </div>
+            }
+        >
             <form
                 id="kc-select-credential-form"
                 className="space-y-3"

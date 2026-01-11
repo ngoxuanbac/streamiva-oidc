@@ -19,7 +19,13 @@ export function Page() {
 
     return (
         <Template
-            headerNode={msg("loginTotpTitle")}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("loginTotpTitle")}
+                    </p>
+                </div>
+            }
             displayMessage={!kcContext.messagesPerField.existsError("totp", "userLabel")}
         >
             <>
@@ -35,7 +41,7 @@ export function Page() {
                         >
                             {kcContext.totp.supportedApplications.map(app => (
                                 <li
-                                    className="text-blue-600 dark:text-blue-400"
+                                    className="text-[#5e17eb] dark:text-[#5e17eb]"
                                     key={app}
                                 >
                                     {advancedMsg(app)}
@@ -236,13 +242,21 @@ export function Page() {
                                 >
                                     {msgStr("doCancel")}
                                 </Button>
-                                <Button id="saveTOTPBtn" type="submit" className="flex-1">
+                                <Button
+                                    id="saveTOTPBtn"
+                                    type="submit"
+                                    className="flex-1 bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
+                                >
                                     {msgStr("doSubmit")}
                                 </Button>
                             </div>
                         </>
                     ) : (
-                        <Button id="saveTOTPBtn" className="w-full" type="submit">
+                        <Button
+                            id="saveTOTPBtn"
+                            className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
+                            type="submit"
+                        >
                             {msgStr("doSubmit")}
                         </Button>
                     )}

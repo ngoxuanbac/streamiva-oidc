@@ -41,16 +41,19 @@ export function Form() {
                             }}
                             action={kcContext.url.loginAction}
                             method="post"
-                            className="space-y-3"
+                            className="space-y-4"
                         >
                             {!kcContext.usernameHidden && (
                                 <Field>
-                                    <FieldLabel htmlFor="username">
+                                    <FieldLabel
+                                        htmlFor="username"
+                                        className="text-sm font-semibold text-gray-700 dark:text-gray-300"
+                                    >
                                         {!kcContext.realm.loginWithEmailAllowed
                                             ? msg("email")
                                             : !kcContext.realm.registrationEmailAsUsername
-                                                ? msg("usernameOrEmail")
-                                                : msg("username")}
+                                              ? msg("usernameOrEmail")
+                                              : msg("username")}
                                     </FieldLabel>
                                     <Input
                                         tabIndex={2}
@@ -60,6 +63,7 @@ export function Form() {
                                         name="username"
                                         autoFocus
                                         autoComplete="username"
+                                        className="mt-1"
                                         aria-invalid={kcContext.messagesPerField.existsError(
                                             "username",
                                             "password"
@@ -69,45 +73,6 @@ export function Form() {
                                         "username",
                                         "password"
                                     ) && (
-                                            <FieldError>
-                                                <span
-                                                    id="input-error"
-                                                    aria-live="polite"
-                                                    dangerouslySetInnerHTML={{
-                                                        __html: kcSanitize(
-                                                            kcContext.messagesPerField.getFirstError(
-                                                                "username",
-                                                                "password"
-                                                            )
-                                                        )
-                                                    }}
-                                                />
-                                            </FieldError>
-                                        )}
-                                </Field>
-                            )}
-
-                            <Field>
-                                <FieldLabel htmlFor="password">
-                                    {msg("password")}
-                                </FieldLabel>
-                                <PasswordWrapper passwordInputId="password">
-                                    <Input
-                                        tabIndex={3}
-                                        type="password"
-                                        id="password"
-                                        name="password"
-                                        autoComplete="current-password"
-                                        aria-invalid={kcContext.messagesPerField.existsError(
-                                            "username",
-                                            "password"
-                                        )}
-                                    />
-                                </PasswordWrapper>
-                                {kcContext.messagesPerField.existsError(
-                                    "username",
-                                    "password"
-                                ) && (
                                         <FieldError>
                                             <span
                                                 id="input-error"
@@ -123,12 +88,55 @@ export function Form() {
                                             />
                                         </FieldError>
                                     )}
+                                </Field>
+                            )}
+
+                            <Field>
+                                <FieldLabel
+                                    htmlFor="password"
+                                    className="text-sm font-semibold text-gray-700 dark:text-gray-300"
+                                >
+                                    {msg("password")}
+                                </FieldLabel>
+                                <PasswordWrapper passwordInputId="password">
+                                    <Input
+                                        tabIndex={3}
+                                        type="password"
+                                        id="password"
+                                        name="password"
+                                        autoComplete="current-password"
+                                        className="mt-1"
+                                        aria-invalid={kcContext.messagesPerField.existsError(
+                                            "username",
+                                            "password"
+                                        )}
+                                    />
+                                </PasswordWrapper>
+                                {kcContext.messagesPerField.existsError(
+                                    "username",
+                                    "password"
+                                ) && (
+                                    <FieldError>
+                                        <span
+                                            id="input-error"
+                                            aria-live="polite"
+                                            dangerouslySetInnerHTML={{
+                                                __html: kcSanitize(
+                                                    kcContext.messagesPerField.getFirstError(
+                                                        "username",
+                                                        "password"
+                                                    )
+                                                )
+                                            }}
+                                        />
+                                    </FieldError>
+                                )}
                             </Field>
 
-                            <div className=" space-y-1 my-3 flex justify-between text-xs  ">
+                            <div className="flex justify-between items-center my-4">
                                 {kcContext.realm.rememberMe &&
                                     !kcContext.usernameHidden && (
-                                        <div className="flex items-center space-x-2 ">
+                                        <div className="flex items-center space-x-2">
                                             <Checkbox
                                                 tabIndex={5}
                                                 id="rememberMe"
@@ -140,26 +148,21 @@ export function Form() {
 
                                             <Label
                                                 htmlFor="rememberMe"
-                                                className="text-sm font-medium cursor-pointer"
+                                                className="text-sm font-normal cursor-pointer text-gray-700 dark:text-gray-300"
                                             >
                                                 {msg("rememberMe")}
                                             </Label>
                                         </div>
                                     )}
-                                <div className="link-style ">
+                                <div>
                                     {kcContext.realm.resetPasswordAllowed && (
-                                        <span className=" underline-offset-4 hover:underline">
-                                            <a
-                                                tabIndex={6}
-                                                href={
-                                                    kcContext.url.loginResetCredentialsUrl
-                                                }
-                                            >
-                                                <Label className="text-sm font-medium cursor-pointer">
-                                                    {msg("doForgotPassword")}
-                                                </Label>
-                                            </a>
-                                        </span>
+                                        <a
+                                            tabIndex={6}
+                                            href={kcContext.url.loginResetCredentialsUrl}
+                                            className="text-sm text-[#5e17eb] hover:text-[#4a12bc] font-medium"
+                                        >
+                                            {msg("doForgotPassword")}
+                                        </a>
                                     )}
                                 </div>
                             </div>
@@ -174,7 +177,7 @@ export function Form() {
 
                                 <Button
                                     disabled={isLoginButtonDisabled}
-                                    className="w-full"
+                                    className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                                     tabIndex={7}
                                     name="login"
                                     id="kc-login"

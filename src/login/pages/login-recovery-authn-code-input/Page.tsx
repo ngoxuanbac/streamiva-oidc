@@ -16,7 +16,13 @@ export function Page() {
     const { msg, msgStr } = useI18n();
     return (
         <Template
-            headerNode={msg("auth-recovery-code-header")}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("auth-recovery-code-header")}
+                    </p>
+                </div>
+            }
             displayMessage={!messagesPerField.existsError("recoveryCodeInput")}
         >
             <form
@@ -60,7 +66,12 @@ export function Page() {
                     )}
                 </Field>
 
-                <Button className="w-full" name="login" id="kc-login" type="submit">
+                <Button
+                    className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
+                    name="login"
+                    id="kc-login"
+                    type="submit"
+                >
                     {msgStr("doLogIn")}
                 </Button>
             </form>

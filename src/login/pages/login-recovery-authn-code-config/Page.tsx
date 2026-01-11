@@ -23,7 +23,15 @@ export function Page() {
     useScript({ olRecoveryCodesListId });
 
     return (
-        <Template headerNode={msg("recovery-code-config-header")}>
+        <Template
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("recovery-code-config-header")}
+                    </p>
+                </div>
+            }
+        >
             <div className="space-y-6">
                 <Alert variant="warning">
                     <AlertDescription>
@@ -146,7 +154,7 @@ export function Page() {
                                 type="submit"
                                 id="saveRecoveryAuthnCodesBtn"
                                 disabled
-                                className="sm:flex-1"
+                                className="sm:flex-1 bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                             >
                                 {msgStr("recovery-codes-action-complete")}
                             </Button>
@@ -164,7 +172,7 @@ export function Page() {
                     ) : (
                         <Button
                             type="submit"
-                            className="w-full"
+                            className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                             id="saveRecoveryAuthnCodesBtn"
                             disabled
                         >

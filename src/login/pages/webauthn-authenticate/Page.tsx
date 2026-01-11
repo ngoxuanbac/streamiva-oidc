@@ -35,19 +35,25 @@ export function Page() {
             displayInfo={realm.registrationAllowed && !registrationDisabled}
             infoNode={
                 <div id="kc-registration" className="text-center text-sm">
-                    <span>
+                    <span className="text-gray-700 dark:text-gray-300">
                         {msg("noAccount")}{" "}
                         <a
                             tabIndex={6}
                             href={url.registrationUrl}
-                            className="text-primary dark:text-white hover:text-primary/80 underline underline-offset-4"
+                            className="text-[#5e17eb] hover:text-[#4a12bc] font-medium"
                         >
                             {msg("doRegister")}
                         </a>
                     </span>
                 </div>
             }
-            headerNode={msg("webauthn-login-title")}
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("webauthn-login-title")}
+                    </p>
+                </div>
+            }
         >
             <div className="space-y-6">
                 <form id="webauth" action={url.loginAction} method="post">
@@ -196,7 +202,12 @@ export function Page() {
                     </>
                 )}
 
-                <Button id={webAuthnButtonId} type="button" autoFocus className="w-full">
+                <Button
+                    id={webAuthnButtonId}
+                    type="button"
+                    autoFocus
+                    className="w-full bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
+                >
                     <Fingerprint className="w-4 h-4" />
                     {msgStr("webauthn-doAuthenticate")}
                 </Button>

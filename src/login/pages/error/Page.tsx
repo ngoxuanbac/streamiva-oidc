@@ -1,5 +1,4 @@
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Button } from "@/components/ui/button";
 import { kcSanitize } from "@keycloakify/login-ui/kcSanitize";
 import { assert } from "tsafe/assert";
 import { useKcContext } from "../../KcContext";
@@ -29,12 +28,14 @@ export function Page() {
                 {!kcContext.skipLink &&
                     kcContext.client !== undefined &&
                     kcContext.client.baseUrl !== undefined && (
-                        <div className="mt-2 flex justify-end">
-                            <Button type="button">
-                                <a id="backToApplication" href={kcContext.client.baseUrl}>
-                                    {msg("backToApplication")}
-                                </a>
-                            </Button>
+                        <div className="flex justify-end">
+                            <a
+                                id="backToApplication"
+                                href={kcContext.client.baseUrl}
+                                className="text-sm text-[#5e17eb] hover:text-[#4a12bc] font-medium"
+                            >
+                                {msg("backToApplication")}
+                            </a>
                         </div>
                     )}
             </div>

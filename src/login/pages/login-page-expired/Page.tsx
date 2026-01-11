@@ -11,7 +11,15 @@ export function Page() {
     const { msg } = useI18n();
 
     return (
-        <Template headerNode={msg("pageExpiredTitle")}>
+        <Template
+            headerNode={
+                <div className="text-center">
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                        {msg("pageExpiredTitle")}
+                    </p>
+                </div>
+            }
+        >
             <Alert variant="warning" className="my-6">
                 <AlertDescription>
                     <div className="space-y-3 text-sm leading-relaxed">
@@ -20,7 +28,7 @@ export function Page() {
                             <a
                                 id="loginRestartLink"
                                 href={kcContext.url.loginRestartFlowUrl}
-                                className="text-primary dark:text-white hover:text-primary/80 underline underline-offset-2 font-medium"
+                                className="text-[#5e17eb] hover:text-[#4a12bc] font-medium"
                             >
                                 {msg("doClickHere")}
                             </a>
@@ -31,7 +39,7 @@ export function Page() {
                             <a
                                 id="loginContinueLink"
                                 href={kcContext.url.loginAction}
-                                className="text-primary dark:text-white hover:text-primary/80 underline underline-offset-2 font-medium"
+                                className="text-[#5e17eb] hover:text-[#4a12bc] font-medium"
                             >
                                 {msg("doClickHere")}
                             </a>

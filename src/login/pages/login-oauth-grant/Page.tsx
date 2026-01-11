@@ -81,7 +81,7 @@ export function Page() {
                                             href={kcContext.client.attributes.tosUri}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-primary dark:text-white hover:text-primary/80 underline underline-offset-4"
+                                            className="text-[#5e17eb] hover:text-[#4a12bc] underline underline-offset-4"
                                         >
                                             {msg("oauthGrantTos")}
                                         </a>
@@ -91,7 +91,7 @@ export function Page() {
                                             href={kcContext.client.attributes.policyUri}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-primary dark:text-white hover:text-primary/80 underline underline-offset-4"
+                                            className="text-[#5e17eb] hover:text-[#4a12bc] underline underline-offset-4"
                                         >
                                             {msg("oauthGrantPolicy")}
                                         </a>
@@ -123,7 +123,7 @@ export function Page() {
                                 type="submit"
                                 name="accept"
                                 id="kc-login"
-                                className="flex-1"
+                                className="flex-1 bg-[#5e17eb] hover:bg-[#4a12bc] text-white font-medium"
                             >
                                 {msgStr("doYes")}
                             </Button>

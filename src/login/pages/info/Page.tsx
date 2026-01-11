@@ -64,28 +64,39 @@ export function Page() {
 
                 if (kcContext.pageRedirectUri) {
                     return (
-                        <Button type="button" className="mt-2 flex ms-auto">
-                            <a href={kcContext.pageRedirectUri}>
+                        <div className="flex justify-end">
+                            <a
+                                href={kcContext.pageRedirectUri}
+                                className="text-sm text-[#5e17eb] hover:text-[#4a12bc] font-medium"
+                            >
                                 {msg("backToApplication")}
                             </a>
-                        </Button>
+                        </div>
                     );
                 }
                 if (kcContext.actionUri) {
                     return (
-                        <Button type="button" className="mt-2 flex ms-auto ">
-                            <a href={kcContext.actionUri}>{msg("proceedWithAction")}</a>
-                        </Button>
+                        <div className="flex justify-end">
+                            <a
+                                href={kcContext.actionUri}
+                                className="text-sm text-[#5e17eb] hover:text-[#4a12bc] font-medium"
+                            >
+                                {msg("proceedWithAction")}
+                            </a>
+                        </div>
                     );
                 }
 
                 if (kcContext.client.baseUrl) {
                     return (
-                        <Button type="button" className="mt-2 flex  ms-auto-end">
-                            <a href={kcContext.client.baseUrl}>
+                        <div className="flex justify-end">
+                            <a
+                                href={kcContext.client.baseUrl}
+                                className="text-sm text-[#5e17eb] hover:text-[#4a12bc] font-medium"
+                            >
                                 {msg("backToApplication")}
                             </a>
-                        </Button>
+                        </div>
                     );
                 }
             })()}
